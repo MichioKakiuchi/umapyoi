@@ -1,0 +1,39 @@
+{
+  "root": true,
+  "extends": [
+    "plugin:tailwindcss/recommended",
+    "prettier",
+    "next"
+  ],
+  "plugins": [
+    "testing-library",
+    "tailwindcss"
+  ],
+  "overrides": [
+    // Only uses Testing Library lint rules in test files
+    {
+      "files": [
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[jt]s?(x)"
+      ],
+      "extends": [
+        "plugin:testing-library/react"
+      ]
+    }
+  ],
+  "ignorePatterns": [
+    "*.config.js"
+  ],
+  "rules": {
+    "react/no-unescaped-entities": "off",
+    "@next/next/no-page-custom-font": "off",
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "order": "asc"
+        }
+      }
+    ]
+  }
+}
